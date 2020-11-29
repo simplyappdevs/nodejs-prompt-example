@@ -5,5 +5,5 @@ export interface ExampleModule {
   name: string;     // name of the example
   shortcut: string; // shortcut for the example
   desc: string;     // description of the example
-  fn: () => void;   // function to execute
+  fn: () => Promise<void>;   // function to execute
 }

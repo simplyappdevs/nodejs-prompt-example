@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Example for @simplyappdevs/nodejs-prompt NPM package",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist/*",
     "build": "npm run clean && npm run tsc",
-    "exec": " node --es-module-specifier-resolution=node ./dist/index.js",
+    "exec": " node --trace-warnings --es-module-specifier-resolution=node ./dist/index.js",
     "build:exec": "npm run build && npm run exec"
   },
   "repository": {
