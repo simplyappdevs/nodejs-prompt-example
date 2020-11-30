@@ -7,7 +7,13 @@ import {prompter, PromptInput, PromptResult} from '@simplyappdevs/nodejs-prompt'
  * App imports
  */
 import {ExampleModule} from './typedefs';
-import ExSinglePromptMod, {default as ExSinglePrompt} from './ex-single-prompt';
+import singlePrompt01 from './ex-single-prompt-01';
+import singlePrompt02 from './ex-single-prompt-02';
+import singlePrompt03 from './ex-single-prompt-03';
+import singlePrompt04 from './ex-single-prompt-04';
+import singlePrompt05 from './ex-single-prompt-05';
+import singlePrompt06 from './ex-single-prompt-06';
+import singlePrompt07 from './ex-single-prompt-07';
 
 /**
  * App entrypoint
@@ -16,7 +22,13 @@ import ExSinglePromptMod, {default as ExSinglePrompt} from './ex-single-prompt';
   // examples
   const examples: Map<string, ExampleModule> = new Map();
 
-  examples.set(ExSinglePromptMod.name, ExSinglePromptMod);
+  examples.set(singlePrompt01.shortcut.toUpperCase(), singlePrompt01);
+  examples.set(singlePrompt02.shortcut.toUpperCase(), singlePrompt02);
+  examples.set(singlePrompt03.shortcut.toUpperCase(), singlePrompt03);
+  examples.set(singlePrompt04.shortcut.toUpperCase(), singlePrompt04);
+  examples.set(singlePrompt05.shortcut.toUpperCase(), singlePrompt05);
+  examples.set(singlePrompt06.shortcut.toUpperCase(), singlePrompt06);
+  examples.set(singlePrompt07.shortcut.toUpperCase(), singlePrompt07);
 
   // build prompt
   const promptsCfg: PromptInput = {
@@ -27,7 +39,7 @@ import ExSinglePromptMod, {default as ExSinglePrompt} from './ex-single-prompt';
     prompt: 'Select example to run',
     valueToEndPrompt: '',
     promptList: [],
-    promptListTitle: 'Examples'
+    promptListTitle: '\x1B[4mExamples\t\t\t\x1B[24m'
   };
 
   let id = 0;
@@ -54,7 +66,7 @@ import ExSinglePromptMod, {default as ExSinglePrompt} from './ex-single-prompt';
 
     // run if selected
     if (selected) {
-      const demo = examples.get(selected!);
+      const demo = examples.get(selected.toUpperCase());
 
       if (demo) {
         // display description
@@ -63,19 +75,35 @@ import ExSinglePromptMod, {default as ExSinglePrompt} from './ex-single-prompt';
         console.log('');
 
         // run demo
-        await demo.fn();
+        try {
+          await demo.fn();
+        } catch (err) {
+          // rethrowing this exception so that it will go back into
+          // catch chain
+          throw err;
+        }
 
         getNext = true;
       }
     }
 
     if (getNext) {
-      prompter.prompt(promptsCfg).then((res: PromptResult) => {
+      return prompter.prompt(promptsCfg).then((res: PromptResult) => {
         if (res.enteredValue === 'X') {
+          // exit demo
           Promise.resolve();
         } else {
-          return runDemo(res.enteredValue);
+          // prompt for next demo
+          return runDemo(res.enteredValue).catch((err) => {
+            // this catch is the chain if the "await" catch above throws an error
+            console.log(`[DEMO ERROR] ${err.message}`);
+          });
         }
+      }).catch((err) => {
+        // whenever we consume prompter, we should trap REJECT because Node soon will deprecate unhandled promise rejection
+        // and will just terminate the process with error code > 0
+        // this is the catch for main menu
+        throw err;
       });
     } else {
       // end recursion

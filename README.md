@@ -7,6 +7,6 @@
 * `git clone https://github.com/simplyappdevs/nodejs-prompt-example.git`
 * `npm run build:exec`
 
-## Examples
+## ES Modules (Experimental In NodeJS)
 
-> Application runs in the main loop to demonstrate nodejs-prompt features.
+> This module was built targeting ES module feature of Node. Due to this, consuming application will need to enable the same settings as well. The setup is [documented here](https://github.com/simplyappdevs/nodejs-prompt#configure-your-application-for-esm).
