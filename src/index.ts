@@ -14,6 +14,9 @@ import singlePrompt04 from './ex-single-prompt-04';
 import singlePrompt05 from './ex-single-prompt-05';
 import singlePrompt06 from './ex-single-prompt-06';
 import singlePrompt07 from './ex-single-prompt-07';
+import multiPrompt01 from './ex-multi-prompt-01';
+import multiPrompt02 from './ex-multi-prompt-02';
+import multiPrompt03 from './ex-multi-prompt-03';
 
 /**
  * App entrypoint
@@ -29,6 +32,9 @@ import singlePrompt07 from './ex-single-prompt-07';
   examples.set(singlePrompt05.shortcut.toUpperCase(), singlePrompt05);
   examples.set(singlePrompt06.shortcut.toUpperCase(), singlePrompt06);
   examples.set(singlePrompt07.shortcut.toUpperCase(), singlePrompt07);
+  examples.set(multiPrompt01.shortcut.toUpperCase(), multiPrompt01);
+  examples.set(multiPrompt02.shortcut.toUpperCase(), multiPrompt02);
+  examples.set(multiPrompt03.shortcut.toUpperCase(), multiPrompt03);
 
   // build prompt
   const promptsCfg: PromptInput = {
