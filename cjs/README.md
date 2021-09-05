@@ -1,4 +1,4 @@
-# CommonKJS example for @simplyappdevs/nodejs-prompt
+# CommonJS example for @simplyappdevs/nodejs-prompt
 
 ## How To Build
 
