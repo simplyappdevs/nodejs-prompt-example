@@ -1,12 +1,10 @@
 # Example application for [NPM Package @simplyappdevs/nodejs-prompt](https://www.npmjs.com/package/@simplyappdevs/nodejs-prompt)
 
-> Sample application to demonstrate the usage of nodejs-prompt module.
+> Examples of consuming `@simplyappdevs/nodejs-prompt` from Node application configured as ESM and CommonJS.
 
 ## Download and Run
 
 * `git clone https://github.com/simplyappdevs/nodejs-prompt-example.git`
-* `npm run build:exec`
-
-## ES Modules (Experimental In NodeJS)
-
-> This module was built targeting ES module feature of Node. Due to this, consuming application will need to enable the same settings as well. The setup is [documented here](https://github.com/simplyappdevs/nodejs-prompt#configure-your-application-for-esm).
+* `cd nodejs-prompt-example`
+* `cd esm` or `cd cjs` for ESM or CommonJS example respectively
+* `npm run exec:build`
