@@ -1,6 +1,6 @@
 {
   "name": "nodejs-prompt-example",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Examples for @simplyappdevs/nodejs-prompt NPM",
   "main": "index.js",
   "type": "module",
