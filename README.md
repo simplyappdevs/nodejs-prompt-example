@@ -1,6 +1,11 @@
-# Example application for [NPM Package @simplyappdevs/nodejs-prompt](https://www.npmjs.com/package/@simplyappdevs/nodejs-prompt)
+# Examples for nodejs-prompt
 
-> Examples of consuming `@simplyappdevs/nodejs-prompt` from Node application configured as ESM and CommonJS.
+> Examples of consuming `nodejs-prompt` module from NodeJS application configured as ESM and CommonJS.
+
+## Links
+
+* [@simplyappdevs/nodejs-prompt](https://www.npmjs.com/package/@simplyappdevs/nodejs-prompt)
+* [GIT Repo](https://github.com/simplyappdevs/nodejs-prompt)
 
 ## Download and Run
 

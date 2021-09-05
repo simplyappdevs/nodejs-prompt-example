@@ -1,4 +1,4 @@
-# CommonJS example for @simplyappdevs/nodejs-prompt
+# CommonJS example for `nodejs-prompt` module
 
 ## How To Build
 

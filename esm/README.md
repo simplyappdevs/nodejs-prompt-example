@@ -1,4 +1,4 @@
-# ESM example for @simplyappdevs/nodejs-prompt
+# ESM example for `nodejs-prompt` module
 
 ## How To Build
 
