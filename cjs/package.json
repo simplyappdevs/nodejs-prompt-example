@@ -2,14 +2,14 @@
   "name": "nodejs-prompt-example",
   "version": "1.0.0",
   "description": "Examples for @simplyappdevs/nodejs-prompt",
-  "main": "index.js",
-  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "type": "commonjs",
   "scripts": {
     "tsc": "tsc",
     "test": "jest",
     "clean": "rm -rf ./dist/*",
     "build": "npm run clean && npm run tsc",
-    "exec": " node --es-module-specifier-resolution=node ./dist/esm/index.js",
+    "exec": " node ./dist/esm/index.js",
     "exec:build": "npm run build && npm run exec"
   },
   "repository": {
