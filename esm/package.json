@@ -36,6 +36,6 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "@simplyappdevs/nodejs-prompt": "^1.2.5"
+    "@simplyappdevs/nodejs-prompt": "^1.3.0"
   }
 }
